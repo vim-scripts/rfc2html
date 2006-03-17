@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1499
+
+This little script makes a HTML file from a RFC (request for comment)
+text file from IETF.org.
+
+The TOC is converted into a navigation-frame and anchors inserted everywhere in the document.
+
+Some visual improvement are done : bold title, rulers between pages, etc.
