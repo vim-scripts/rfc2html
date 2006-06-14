@@ -1,7 +1,6 @@
 " This VIM script convers a RFC into a html file
-" By Samuel Hangouët (shangouet at laposte.net)
-" Enjoy !
-" Version: 1.3 (21/03/2006)
+" By Samuel Hangouet (shangouet at laposte.net)
+" Version: 1.4 (14/06/2006)
 " Todo: - add DocTypes
 "       - add external links for ressources on the Internet (links to other RFC, etc.)
 "       - add links for references ('<a href="[x] ">[x]</a>' and '<a name="[x] "/>[x]')
@@ -31,11 +30,11 @@ norm "apddGo
 " Join 2-lines items into only one line
 %s/^\(\s\{3}\d.*\D\)\n\(\s\{4}.*\d\)$/\1<br \/>\2/e
 " Put links to the other frame inside the TOC
-%s/\(\s\{3}\)\(\S\+\)\(.*\s\d\+\)$/\1<a href="content.html#\2" target="content">\2\3<\/a>/
+%s/\(\s\{3}\)\(\S\+\)\(.*\s*\d\+\)$/\1<a href="content.html#\2" target="content">\2\3<\/a>/
 " Build HTML header and footer
 norm ggO<html> <head>  <title>
 norm "%pA</title>
-norm o </head> <body>  <pre>
+norm o </head> <body>  <pre>
 norm Go  </pre> </body></html>
 " Save and close
 wq!
@@ -50,6 +49,6 @@ norm Go
 " Build HTML header and footer
 norm ggO<html> <head>  <title>
 norm "%pA</title>
-norm o </head> <body>  <pre>
+norm o </head> <body>  <pre>
 norm Go  </pre> </body></html>
 sav! content.html
